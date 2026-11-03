@@ -1,0 +1,29 @@
+:root { --azul-escuro:#0b1f4d; --azul:#4174e3; --azul-claro:#e9f1ff; --texto:#1e293b; --fundo:#f3f7fc; --branco:#fff; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; color:var(--texto); background:var(--fundo); font-family:Arial,Helvetica,sans-serif; }
+img { display:block; width:100%; height:auto; }
+.cabecalho, header { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:12px clamp(18px,4vw,64px); background:var(--branco); border-bottom:1px solid #dbe4f0; }
+.identidade { display:flex; flex:0 0 auto; align-items:center; gap:12px; color:inherit; text-decoration:none; }
+.logo { width:clamp(52px,6vw,72px); overflow:hidden; border-radius:12px; }
+.logo img { aspect-ratio:1; object-fit:cover; }
+.nome-empresa { font-family:Georgia,'Times New Roman',serif; font-size:clamp(18px,2vw,26px); font-weight:bold; white-space:nowrap; }
+.nome-empresa span:first-child { color:var(--azul-escuro); }.nome-empresa span:last-child { color:#2497dc; }
+nav { display:flex; flex:1; justify-content:flex-end; align-items:center; flex-wrap:wrap; gap:4px; }
+nav a { padding:9px 10px; border-radius:7px; color:#334155; font-size:clamp(10px,.95vw,14px); font-weight:bold; text-decoration:none; text-transform:uppercase; transition:background-color .2s,color .2s,transform .2s; }
+nav a:hover,nav a:focus-visible,nav a.menuativo { color:var(--azul-escuro); background:var(--azul-claro); } nav a:hover { transform:translateY(-1px); }
+main { max-width:1280px; margin:0 auto; padding:0 clamp(18px,4vw,64px) 40px; }
+.apresentacao { display:grid; align-items:center; min-height:260px; margin:28px 0 42px; padding:clamp(28px,5vw,56px); overflow:hidden; border-radius:18px; color:var(--branco); background:linear-gradient(105deg,rgba(11,31,77,.96),rgba(25,82,169,.84)),url('../img/veiculo-01-estudio.png') center/cover; box-shadow:0 14px 34px rgba(15,42,87,.18); }
+.apresentacao > div { max-width:610px; }.sobretitulo { margin:0 0 8px; color:#5aa7ee; font-size:12px; font-weight:bold; letter-spacing:.12em; }.apresentacao .sobretitulo { color:#a9dcff; }
+h1,h2 { margin:0; color:var(--azul-escuro); font-family:Georgia,'Times New Roman',serif; } h1 { color:var(--branco); font-size:clamp(32px,5vw,54px); line-height:1.08; }
+.apresentacao p:not(.sobretitulo) { max-width:510px; margin:16px 0 24px; font-size:clamp(15px,1.8vw,18px); line-height:1.55; }
+.botao-principal { display:inline-block; padding:12px 20px; border-radius:8px; color:var(--azul-escuro); background:var(--branco); font-weight:bold; text-decoration:none; transition:transform .2s,background-color .2s; }.botao-principal:hover,.botao-principal:focus-visible { background:#dff1ff; transform:translateY(-2px); }
+.titulo-secao { display:flex; align-items:end; justify-content:space-between; gap:16px; } h2 { font-size:clamp(25px,3vw,34px); }.link-simples { color:var(--azul); font-weight:bold; text-decoration:none; white-space:nowrap; }.link-simples:hover,.link-simples:focus-visible { text-decoration:underline; }
+.imagens { display:flex; gap:16px; width:100%; padding:20px 2px 28px; overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-x:contain; }
+.imagens a { position:relative; flex:0 0 clamp(220px,28vw,300px); overflow:hidden; border-radius:12px; color:var(--branco); scroll-snap-align:start; box-shadow:0 5px 15px rgba(15,42,87,.12); }.imagens img { height:190px; object-fit:cover; transition:transform .3s; }.imagens span { position:absolute; right:0; bottom:0; left:0; padding:28px 14px 12px; background:linear-gradient(transparent,rgba(11,31,77,.86)); font-size:14px; font-weight:bold; }.imagens a:hover img { transform:scale(1.05); }.imagens a:focus-visible,.informacoes a:focus-visible { outline:3px solid #2497dc; outline-offset:3px; }
+.carrossel-informacoes { position:relative; width:min(100%,680px); margin:8px auto 10px; }.informacoes { display:flex; overflow-x:auto; border-radius:14px; scroll-behavior:smooth; scroll-snap-type:x mandatory; scrollbar-width:none; box-shadow:0 7px 20px rgba(15,42,87,.14); }.informacoes::-webkit-scrollbar { display:none; }.informacoes a { flex:0 0 100%; scroll-snap-align:start; }.informacoes img { height:clamp(200px,35vw,340px); object-fit:cover; }.seta-carrossel { position:absolute; z-index:1; top:50%; width:42px; height:42px; border:0; border-radius:50%; color:var(--azul-escuro); background:rgba(255,255,255,.94); font-size:20px; cursor:pointer; transform:translateY(-50%); box-shadow:0 3px 10px rgba(0,0,0,.18); }.seta-carrossel.anterior { left:12px; }.seta-carrossel.proxima { right:12px; }.seta-carrossel:disabled { opacity:.45; cursor:default; }
+footer { display:flex; justify-content:space-between; gap:16px; padding:22px clamp(18px,4vw,64px); color:#dce8ff; background:var(--azul-escuro); font-size:14px; } footer span:first-child { color:var(--branco); font-weight:bold; }
+/* Componentes compartilhados pelas páginas internas */
+.lista-carros { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:20px; padding:16px 0; }.carro { padding:12px; background:var(--branco); border-radius:10px; box-shadow:0 4px 12px rgba(15,42,87,.09); scroll-margin-top:16px; }.carro img { height:180px; border-radius:7px; object-fit:cover; }.carro h2 { margin-top:12px; font-family:Arial,Helvetica,sans-serif; font-size:20px; }
+@media (max-width:850px) { .cabecalho,header { flex-direction:column; } nav { justify-content:center; } }
+@media (max-width:560px) { .cabecalho,header { padding:12px 16px; } nav a { padding:8px 7px; font-size:10px; } main { padding-right:16px; padding-left:16px; } .apresentacao { margin-top:18px; border-radius:13px; } .titulo-secao { align-items:flex-start; flex-direction:column; gap:8px; } footer { align-items:flex-start; flex-direction:column; padding:20px 16px; } }
